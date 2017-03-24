@@ -4,6 +4,7 @@ import React from "react";
 import {
     Appear,
     BlockQuote,
+    CodePane,
     Cite,
     Deck,
     Heading,
@@ -17,6 +18,7 @@ import {
     Markdown,
     Image,
 } from "spectacle";
+import CodeSlide from 'spectacle-code-slide';
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -89,7 +91,7 @@ export default class Presentation extends React.Component {
                         <Appear>
                             <Fill>
                                 <Heading size={4} caps textColor="secondary" margin={10}>
-                                    <span style={{color: "#03A9FC"}}>Awesome</span>
+                                    <span style={{color: "#4445fa"}}>Awesome</span>
                                 </Heading>
                             </Fill>
                         </Appear>
@@ -138,9 +140,6 @@ export default class Presentation extends React.Component {
                         <Appear><List>
                             <ListItem style={{marginLeft: '10%'}} textColor="hightLight">New package management tool</ListItem>
                         </List></Appear>
-                        <Appear><ListItem textColor="primary">Component-based</ListItem></Appear>
-                        <Appear><ListItem textColor="primary">Lightweight but powerful</ListItem></Appear>
-                        <Appear><ListItem textColor="primary">Playground for new technology</ListItem></Appear>
                     </List>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="secondary">
@@ -186,36 +185,68 @@ export default class Presentation extends React.Component {
                         <Appear><ListItem textColor="primary">Component-level hot reload (see react-transform-boilerplate)</ListItem></Appear>
                         <Appear><ListItem textColor="primary">ES6/7 can be translated through Babel</ListItem></Appear>
                         <Appear><ListItem textColor="primary">Use eslint-plugin-react and Airbnb JavaScript standard</ListItem></Appear>
-                        <Appear><List>
-                            <ListItem style={{marginLeft: '10%'}} textColor="hightLight">Lazy loading</ListItem>
-                        </List></Appear>
-                        <Appear><ListItem textColor="primary">Keep routers synced with store</ListItem></Appear>
                     </List>
                 </Slide>
-                <Slide transition={["fade"]} bgColor="tertiary">
-                    <Heading size={6} textColor="primary" caps>Typography</Heading>
-                    <Heading size={1} textColor="secondary">Heading 1</Heading>
-                    <Heading size={2} textColor="secondary">Heading 2</Heading>
-                    <Heading size={3} textColor="secondary">Heading 3</Heading>
-                    <Heading size={4} textColor="secondary">Heading 4</Heading>
-                    <Heading size={5} textColor="secondary">Heading 5</Heading>
-                    <Text size={6} textColor="secondary">Standard text</Text>
-                </Slide>
-                <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-                    <Heading size={6} textColor="secondary" caps>Standard List</Heading>
+                <Slide transition={["slide"]} bgColor="secondary">
+                    <Heading size={2} fit textColor="primary">
+                        Websocket is cool!
+                    </Heading>
                     <List>
-                        <ListItem>Item 1</ListItem>
-                        <ListItem>Item 2</ListItem>
-                        <ListItem>Item 3</ListItem>
-                        <ListItem>Item 4</ListItem>
+                        <Appear><ListItem textColor="primary">Instant notification and response between pages</ListItem></Appear>
+                        <Appear><ListItem textColor="primary">Paho-mqtt, socket.io-client</ListItem></Appear>
+                        <Appear><ListItem textColor="primary">Reconnection is easy with Websocket</ListItem></Appear>
+                        <Appear><ListItem textColor="primary">Keep security in mind</ListItem></Appear>
                     </List>
                 </Slide>
-                <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-                    <BlockQuote>
-                        <Quote>Example Quote</Quote>
-                        <Cite>Author</Cite>
-                    </BlockQuote>
+                <Slide transition={["slide"]} bgColor="secondary">
+                    <Text textAlign="left" margin="10px 0 0" textColor="tertiary" size={3} bold>
+                        <Layout>
+                            <Fill>
+                                <CodePane
+                                    textColor="#fff"
+                                    bgColor="#000"
+                                    lang="jsx"
+                                    source={require("../assets/code/file_structure_1.txt")}
+                                    margin="auto"
+                                />
+                            </Fill>
+                            <Fill>
+                                <CodePane
+                                    textColor="#fff"
+                                    bgColor="#000"
+                                    lang="jsx"
+                                    source={require("../assets/code/file_structure_2.txt")}
+                                    margin="auto"
+                                />
+                            </Fill>
+                        </Layout>
+                    </Text>
                 </Slide>
+
+                {/*<Slide transition={["fade"]} bgColor="tertiary">*/}
+                    {/*<Heading size={6} textColor="primary" caps>Typography</Heading>*/}
+                    {/*<Heading size={1} textColor="secondary">Heading 1</Heading>*/}
+                    {/*<Heading size={2} textColor="secondary">Heading 2</Heading>*/}
+                    {/*<Heading size={3} textColor="secondary">Heading 3</Heading>*/}
+                    {/*<Heading size={4} textColor="secondary">Heading 4</Heading>*/}
+                    {/*<Heading size={5} textColor="secondary">Heading 5</Heading>*/}
+                    {/*<Text size={6} textColor="secondary">Standard text</Text>*/}
+                {/*</Slide>*/}
+                {/*<Slide transition={["fade"]} bgColor="primary" textColor="tertiary">*/}
+                    {/*<Heading size={6} textColor="secondary" caps>Standard List</Heading>*/}
+                    {/*<List>*/}
+                        {/*<ListItem>Item 1</ListItem>*/}
+                        {/*<ListItem>Item 2</ListItem>*/}
+                        {/*<ListItem>Item 3</ListItem>*/}
+                        {/*<ListItem>Item 4</ListItem>*/}
+                    {/*</List>*/}
+                {/*</Slide>*/}
+                {/*<Slide transition={["fade"]} bgColor="secondary" textColor="primary">*/}
+                    {/*<BlockQuote>*/}
+                        {/*<Quote>Example Quote</Quote>*/}
+                        {/*<Cite>Author</Cite>*/}
+                    {/*</BlockQuote>*/}
+                {/*</Slide>*/}
             </Deck>
         );
     }
