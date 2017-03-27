@@ -34,7 +34,9 @@ require("spectacle/lib/themes/default/index.css");
 import reactlogo from "../assets/image/react-logo.png";
 const images = {
     reactLogo: require("../assets/image/reactlogo.png"),
-    reactRedux: require("../assets/image/react-redux.png")
+    reactRedux: require("../assets/image/react-redux.png"),
+    reduxvsMobx: require("../assets/image/mobxredux.png"),
+    sizeCompare: require("../assets/image/sizeCompare.png"),
 };
 
 preloader(images);
@@ -124,31 +126,39 @@ export default class Presentation extends React.Component {
                         <Appear><ListItem textColor="primary">Fast</ListItem></Appear>
                         <Appear><ListItem textColor="primary">Component-based</ListItem></Appear>
                         <Appear><ListItem textColor="primary">Lightweight but powerful</ListItem></Appear>
+                    </List>
+                </Slide>
+                <Slide transition={["zoom"]} bgColor="primary">
+                    <Heading size={2} fit textColor="secondary">
+                        Size of popular front-end frameworks
+                    </Heading>
+                    <Image src={images.sizeCompare.replace("/", "")} margin="40px auto 40px" height="450px"/>
+                </Slide>
+                <Slide transition={["fade"]} bgColor="secondary">
+                    <Heading size={2} fit textColor="primary">
+                        Why do we choose
+                    </Heading>
+                    <img src={images.reactRedux.replace('/','')}/>
+                    <List>
+                        <ListItem textColor="primary">Documentation and community</ListItem>
+                        <ListItem textColor="primary">Data-driven</ListItem>
+                        <ListItem textColor="primary">Fast</ListItem>
+                        <ListItem textColor="primary">Component-based</ListItem>
+                        <ListItem textColor="primary">Lightweight but powerful</ListItem>
                         <Appear><ListItem textColor="primary">Playground for new technology</ListItem></Appear>
                     </List>
                 </Slide>
-                <Slide transition={["slide"]} bgColor="secondary">
-                    <Heading size={2} fit textColor="primary">
-                        Node.js is front-end developers' friend
-                    </Heading>
-                    <List>
-                        <Appear><ListItem textColor="primary">Pain of developing front-end page without API ready for use</ListItem></Appear>
-                        <Appear><List>
-                            <ListItem style={{marginLeft: '10%'}} textColor="hightLight">Mock Server</ListItem>
-                        </List></Appear>
-                        <Appear><ListItem textColor="primary">Yarn from Facebook</ListItem></Appear>
-                        <Appear><List>
-                            <ListItem style={{marginLeft: '10%'}} textColor="hightLight">New package management tool</ListItem>
-                        </List></Appear>
-                    </List>
-                </Slide>
+
                 <Slide transition={["slide"]} bgColor="secondary">
                     <Heading size={2} fit textColor="primary">
                         Dealing with data
                     </Heading>
                     <List>
                         <Appear><ListItem textColor="primary">A predictable state container for JavaScript apps.</ListItem></Appear>
-                        <Appear><ListItem textColor="primary">Before you use Redux</ListItem></Appear>
+                        <Appear><ListItem textColor="primary">Before we start to use Redux</ListItem></Appear>
+                        <Appear><List>
+                            <ListItem style={{marginLeft: '10%'}} textColor="hightLight">Install Redux DevTools Chrome plugin</ListItem>
+                        </List></Appear>
                         <Appear><List>
                             <ListItem style={{marginLeft: '10%'}} textColor="hightLight">Action, Reducer and State</ListItem>
                         </List></Appear>
@@ -156,14 +166,22 @@ export default class Presentation extends React.Component {
                             <ListItem style={{marginLeft: '10%'}} textColor="hightLight">Keep the state flat</ListItem>
                         </List></Appear>
                         <Appear><List>
-                            <ListItem style={{marginLeft: '10%'}} textColor="hightLight">Use immutable states</ListItem>
+                            <ListItem style={{marginLeft: '10%'}} textColor="hightLight">Immutable states</ListItem>
                         </List></Appear>
-                        <Appear><ListItem textColor="primary">Stop using local states except for input, textarea and select</ListItem></Appear>
-                        <Appear><ListItem textColor="primary">Understand component lifecycle and use with Redux</ListItem></Appear>
-                        <Appear>
-                            <ListItem textColor="primary"><a style={{color: "#ffc000"}} href="https://youtu.be/76FRrbY18Bs">MobX</a> (2017 React Conference)</ListItem>
-                        </Appear>
+                        <Appear><ListItem textColor="primary">Understand component lifecycle and use it with Redux</ListItem></Appear>
+                        <Appear><ListItem textColor="primary">Stop using states in components except for input, textarea and select</ListItem></Appear>
                     </List>
+                </Slide>
+                <Slide transition={["zoom"]} bgColor="secondary">
+                    <Heading size={2} textColor="primary">
+                        Redux vs MobX
+                    </Heading>
+                    <Appear><Image src={images.reduxvsMobx.replace("/", "")} margin="0px auto 40px" height="293px"/></Appear>
+                    <Appear>
+                        <Text textAlign="center" margin="10px 0 0" textColor="primary" size={3} bold>
+                            <a style={{color: "#ffc000"}} href="https://youtu.be/76FRrbY18Bs">MobX</a> (2017 React Conference)
+                        </Text>
+                    </Appear>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="secondary">
                     <Heading size={2} fit textColor="primary">
@@ -185,6 +203,50 @@ export default class Presentation extends React.Component {
                         <Appear><ListItem textColor="primary">Component-level hot reload (see react-transform-boilerplate)</ListItem></Appear>
                         <Appear><ListItem textColor="primary">ES6/7 can be translated through Babel</ListItem></Appear>
                         <Appear><ListItem textColor="primary">Use eslint-plugin-react and Airbnb JavaScript standard</ListItem></Appear>
+                        <Appear><ListItem textColor="primary">Great <a style={{color: '#ffc000'}} href="https://github.com/davezuko/react-redux-starter-kit">toolkit</a> for fast development of React application from nwb</ListItem></Appear>
+                        <Appear><ListItem textColor="primary">An awesome <a style={{color: '#ffc000'}} href="https://github.com/davezuko/react-redux-starter-kit">starter kit</a> with everything you needed by davezuko</ListItem></Appear>
+                    </List>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="secondary">
+                    <Heading size={5} textColor="primary">
+                        File Structures
+                    </Heading>
+                    <Text textAlign="left" margin="10px 0 0" textColor="tertiary" size={3} bold>
+                        <Layout>
+                            <Fill>
+                                <CodePane
+                                    textColor="#fff"
+                                    bgColor="#1F2022"
+                                    lang="txt"
+                                    source={require("../assets/code/file_structure_1.txt")}
+                                    margin="auto"
+                                />
+                            </Fill>
+                            <Fill>
+                                <CodePane
+                                    textColor="#fff"
+                                    bgColor="#1F2022"
+                                    lang="txt"
+                                    source={require("../assets/code/file_structure_2.txt")}
+                                    margin="auto"
+                                />
+                            </Fill>
+                        </Layout>
+                    </Text>
+                </Slide>
+                <Slide transition={["slide"]} bgColor="secondary">
+                    <Heading size={2} fit textColor="primary">
+                        Node.js is front-end developers' friend
+                    </Heading>
+                    <List>
+                        <Appear><ListItem textColor="primary">Pain of developing front-end page without API ready for use</ListItem></Appear>
+                        <Appear><List>
+                            <ListItem style={{marginLeft: '10%'}} textColor="hightLight">Mock Server</ListItem>
+                        </List></Appear>
+                        <Appear><ListItem textColor="primary">Yarn from Facebook</ListItem></Appear>
+                        <Appear><List>
+                            <ListItem style={{marginLeft: '10%'}} textColor="hightLight">New package management tool</ListItem>
+                        </List></Appear>
                     </List>
                 </Slide>
                 <Slide transition={["slide"]} bgColor="secondary">
@@ -198,55 +260,6 @@ export default class Presentation extends React.Component {
                         <Appear><ListItem textColor="primary">Keep security in mind</ListItem></Appear>
                     </List>
                 </Slide>
-                <Slide transition={["slide"]} bgColor="secondary">
-                    <Text textAlign="left" margin="10px 0 0" textColor="tertiary" size={3} bold>
-                        <Layout>
-                            <Fill>
-                                <CodePane
-                                    textColor="#fff"
-                                    bgColor="#000"
-                                    lang="jsx"
-                                    source={require("../assets/code/file_structure_1.txt")}
-                                    margin="auto"
-                                />
-                            </Fill>
-                            <Fill>
-                                <CodePane
-                                    textColor="#fff"
-                                    bgColor="#000"
-                                    lang="jsx"
-                                    source={require("../assets/code/file_structure_2.txt")}
-                                    margin="auto"
-                                />
-                            </Fill>
-                        </Layout>
-                    </Text>
-                </Slide>
-
-                {/*<Slide transition={["fade"]} bgColor="tertiary">*/}
-                    {/*<Heading size={6} textColor="primary" caps>Typography</Heading>*/}
-                    {/*<Heading size={1} textColor="secondary">Heading 1</Heading>*/}
-                    {/*<Heading size={2} textColor="secondary">Heading 2</Heading>*/}
-                    {/*<Heading size={3} textColor="secondary">Heading 3</Heading>*/}
-                    {/*<Heading size={4} textColor="secondary">Heading 4</Heading>*/}
-                    {/*<Heading size={5} textColor="secondary">Heading 5</Heading>*/}
-                    {/*<Text size={6} textColor="secondary">Standard text</Text>*/}
-                {/*</Slide>*/}
-                {/*<Slide transition={["fade"]} bgColor="primary" textColor="tertiary">*/}
-                    {/*<Heading size={6} textColor="secondary" caps>Standard List</Heading>*/}
-                    {/*<List>*/}
-                        {/*<ListItem>Item 1</ListItem>*/}
-                        {/*<ListItem>Item 2</ListItem>*/}
-                        {/*<ListItem>Item 3</ListItem>*/}
-                        {/*<ListItem>Item 4</ListItem>*/}
-                    {/*</List>*/}
-                {/*</Slide>*/}
-                {/*<Slide transition={["fade"]} bgColor="secondary" textColor="primary">*/}
-                    {/*<BlockQuote>*/}
-                        {/*<Quote>Example Quote</Quote>*/}
-                        {/*<Cite>Author</Cite>*/}
-                    {/*</BlockQuote>*/}
-                {/*</Slide>*/}
             </Deck>
         );
     }

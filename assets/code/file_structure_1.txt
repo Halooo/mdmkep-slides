@@ -1,0 +1,27 @@
+            mdmkep front-end file structure
+            .
+            ├── build (dist)
+            │   ├── favicon.ico
+            │   ├── index.html
+            │   └── static
+            │       ├── css
+            │       └── js
+            ├── src
+            │   └── components
+            │       └── ...
+            ├── actions
+            │   └── ...
+            ├── reducers
+            │   └── ...
+            ├── store
+            │   └── configure-store.js
+            ├── utils
+            │   └── ...
+            ├── assets
+            │   └── ...
+            ├── favicon.ico
+            ├── index.css
+            ├── App.js
+            ├── index.js
+            ├── index.html
+            └── envConfigure.js

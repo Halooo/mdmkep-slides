@@ -1,0 +1,33 @@
+            react-redux-starter-kit
+            .
+            ├── bin
+            ├── blueprints
+            ├── build
+            │   └── webpack
+            ├── config
+            ├── server
+            │   └── main.js
+            ├── src
+            │   ├── main.js
+            │   ├── components
+            │   ├── containers
+            │   ├── layouts
+            │   ├── static
+            │   ├── styles
+            │   ├── store
+            │   │   ├── createStore.js
+            │   │   └── reducers.js
+            │   └── routes
+            │       ├── index.js
+            │       ├── Root.js
+            │       └── Home
+            │           ├── index.js
+            │           ├── assets
+            │           ├── components
+            │           ├── container
+            │           ├── modules
+            │           └── routes **
+            └── tests
+
+checkout documentation at
+https://github.com/davezuko/react-redux-starter-kit
