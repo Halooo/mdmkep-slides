@@ -1,3 +1,9 @@
+# The Slides
+
+The slide show is hosted on https://mdmkep-slides.herokuapp.com/
+
+Visit the page with both your smartphone and a browser. Thanks to Websocket, you can controll the slideshow remotely with swipe motions on the phone screen.
+
 # React
 
 React is a declarative, component-based library for building user interfaces. Combined with Redux, it is an MVVM framework for front-end developing. 
